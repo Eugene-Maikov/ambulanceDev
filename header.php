@@ -17,7 +17,15 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
-  <link rel="shortcut icon" href="<?php echo bloginfo('template_url'); ?>style/app/favicon.ico" type="image/x-icon">
+
+  <link rel="preload" href="<?php echo bloginfo('template_url'); ?>style/app/fonts/MontserratRegular.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="<?php echo bloginfo('template_url'); ?>style/app/fonts/MontserratMedium.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="<?php echo bloginfo('template_url'); ?>style/app/fonts/MontserratSemiBold.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="<?php echo bloginfo('template_url'); ?>style/app/fonts/MontserratBold.woff2" as="font"
+    type="font/woff2" crossorigin>
 
 
   <?php wp_head(); ?>
@@ -61,7 +69,14 @@
     <nav class="nav" title="Навигация">
       <div class="container">
         <div class="nav__inner">
-          <ul class="list-reset nav__list">
+          <?php 
+            wp_nav_menu( [
+            'theme_location'  => 'primary-menu',
+            'container'       => 'ul',
+            'menu_class'      => 'list-reset nav__list',
+            ] );
+          ?>
+          <!-- <ul class="list-reset nav__list">
             <li class="nav__item"><a href="http://ambulance/" class="nav__link">Главная</a></li>
             <li class="nav__item"><a href="http://ambulance/personnel/" class="nav__link dopmenu">Сотрудники</a>
               <ul class="nav__sublist list-reset">
@@ -113,7 +128,7 @@
               </ul>
             </li>
 
-          </ul>
+          </ul> -->
           <div class="nav__buttons">
             <button class="btn-reset burger burger__site-map" aria-label="Открыть карту сайта" aria-expanded="false"
               data-graph-path="site-map" data-burger>
@@ -254,10 +269,3 @@
         </div>
       </div>
     </div>
-
-    <?php
-      wp_nav_menu( [
-      'theme_location' => 'primary-menu',
-      'menu_id' => 'primary-nav',
-      ] );
-    ?>

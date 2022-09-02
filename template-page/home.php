@@ -18,18 +18,18 @@ get_header();
     <div class="container">
       <h2 class="visually-hidden">Баннеры</h2>
       <div class="banner__list">
-        <div class="banner__item">
+        <a href="#" class="banner__item">
           <p>БАННЕР</p>
-        </div>
-        <div class="banner__item">
+        </a>
+        <a href="#" class="banner__item">
           <p>БАННЕР</p>
-        </div>
-        <div class="banner__item">
+        </a>
+        <a href="#" class="banner__item">
           <p>БАННЕР</p>
-        </div>
-        <div class="banner__item">
+        </a>
+        <a href="#" class="banner__item">
           <p>БАННЕР</p>
-        </div>
+        </a>
 
       </div>
     </div>
