@@ -11,13 +11,13 @@
 
 ?>
 
-	<footer class="footer">
-      <p class="footer__copy">2011-2022 ГБУЗНО «Станция скорой медицинской помощи г. Нижнего новгорода» Все права
-        защищены</p>
-    </footer>
+<footer class="footer">
+  <p class="footer__copy"><?php echo carbon_get_theme_option( 'footer__copy' ); ?></p>
+</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

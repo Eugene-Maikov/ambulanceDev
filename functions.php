@@ -182,6 +182,5 @@ function crb_load() {
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
     // Настройки темы
-	require_once(get_template_directory() . '/inc/carbon-fields-template/home.php');
 	require_once(get_template_directory() . '/inc/carbon-fields-template/theme.php');
 }

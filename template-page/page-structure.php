@@ -24,7 +24,21 @@ get_header();
         <li><a href="#">Сотрудники</a></li>
       </ul>
 
+      <div class="structure">
+        <h2 class="title-regular">Администрация</h2>
+        <div class="structure__item">
+          <p class="structure__post">Главный врач</p>
+          <p class="structure__name">Голубев Игорь Владимирович</p>
+          <p class="structure__tel">тел. (831) 281-00-99 доб. 309</p>
+        </div>
+        <div class="structure__item">
+          <p class="structure__post">Главный врач</p>
+          <p class="structure__name">Голубев Игорь Владимирович</p>
+          <p class="structure__tel">тел. (831) 281-00-99 доб. 309</p>
+        </div>
+      </div>
     </div>
+  </div>
 
   </div>
 

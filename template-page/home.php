@@ -9,7 +9,7 @@ get_header();
 <main class="main">
   <section class="hero">
     <div class="container">
-      <h1 class="hero__title">Помощь придет всегда!</h1>
+      <h1 class="hero__title"><?php echo carbon_get_the_post_meta( 'hero__title' ); ?></h1>
     </div>
 
   </section>
@@ -47,12 +47,11 @@ get_header();
           </picture>
         </div>
         <div class="message__contants">
-          <h2 class="message__title">Напишите письмо руководству</h2>
-          <p class="message__subtitle">Вы можете задать все интересующие Вас вопросы, поделиться предложениями
-            по улучшению качества работы
-          </p>
+          <h2 class="message__title"><?php echo carbon_get_the_post_meta( 'message__title' ); ?></h2>
+          <p class="message__subtitle"><?php echo carbon_get_the_post_meta( 'message__subtitle' ); ?></p>
           <div class="message__btn-box">
-            <a href="feedback.html" class="btn-reset btn message__btn">Напиать письмо</a>
+            <a href="feedback.html"
+              class="btn-reset btn message__btn"><?php echo carbon_get_the_post_meta( 'message__btn' ); ?></a>
           </div>
         </div>
       </div>
@@ -63,52 +62,8 @@ get_header();
     <div class="container">
       <h1 class="title">О нас</h1>
       <div class="about__content">
-        <p class="about__text">ГБУЗ НО ССМПНН для населения Нижнего Новгорода
-          круглосуточно оказывает скорую медицинскую помощь (в том числе
-          выезд специализированных бригад: педиатрического,
-          психиатрического, реанимационного профиля).
+        <p class="about__text"><?php echo carbon_get_the_post_meta( 'about__text' ); ?>
         </p>
-        <p class="about__text">В соответствии с Приказом Министерства здравоохранения и социального развития
-          РФ от 20
-          июня 2013 г. № 388н «Об утверждении порядка оказания скорой медицинской помощи»:</p>
-        <ul class="about__list">
-          <li class="about__list-item">Скорая, в том числе скорая специализированная, медицинская помощь
-            оказывается при
-            заболеваниях, несчастных
-            случаях, травмах, отравлениях и других состояниях, требующих срочного медицинского вмешательства.
-          </li>
-          <li class="about__list-item">Скорая, в том числе скорая специализированная, медицинская помощь
-            оказывается на
-            основе стандартов
-            медицинской помощи.</li>
-          <li class="about__list-item">Скорая, в том числе скорая специализированная, медицинская помощь
-            оказывается в
-            следующих условиях:
-            <ol>
-              <li>Вне медицинской организации — по месту вызова бригады скорой, в том числе скорой
-                специализированной,
-                медицинской помощи, а также в транспортном средстве при медицинской эвакуации;</li>
-              <li>Амбулаторно (в условиях, не предусматривающих круглосуточного медицинского наблюдения и
-                лечения);
-              </li>
-              <li>Стационарно (в условиях, обеспечивающих круглосуточное медицинское наблюдение и лечение).
-              </li>
-            </ol>
-          </li>
-          <li class="about__list-item">Скорая, в том числе скорая специализированная, медицинская помощь
-            оказывается в
-            следующих формах:
-            <ol>
-              <li>Экстренной — при внезапных острых заболеваниях, состояниях, обострении хронических
-                заболеваний,
-                представляющих угрозу жизни пациента;</li>
-              <li>Неотложной — при внезапных острых заболеваниях, состояниях, обострении хронических
-                заболеваний без
-                явных
-                признаков угрозы жизни пациента.</li>
-            </ol>
-          </li>
-        </ul>
       </div><!-- /. about__content -->
     </div><!-- /. container -->
   </section>
@@ -544,16 +499,19 @@ get_header();
     <div class="container">
       <div class="contacts__inner">
         <div class="contacts__map">
-          <iframe
+          <?php echo carbon_get_the_post_meta( 'contacts__map' ); ?>
+          <!-- <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa3face47ff1f1d60a75f24fd83277248cadaf28485eaa0d69579feac12099f32&source=constructor"
-            frameborder="0" width="628" height="438"></iframe>
+            frameborder="0" width="628" height="438"></iframe> -->
         </div>
         <div class="contacts__info">
           <div class="contacts__top">
-            <h3 class="contacts__title">ГБУЗНО «Станция скорой медицинской помощи г. Нижнего новгорода»</h3>
+            <h3 class="contacts__title"><?php echo carbon_get_the_post_meta( 'contacts__title' ); ?></h3>
             <div class="contacts__working">
-              <p class="contacts__working-item"><span>Режим работы: </span>круглосуточно</p>
-              <p class="contacts__working-item"><span>Адрес: </span>603105 г. Нижний Новгород, ул. Чачиной, 24</p>
+              <p class="contacts__working-item"><span>Режим работы:
+                </span><?php echo carbon_get_the_post_meta( 'contacts__working' ); ?></p>
+              <p class="contacts__working-item"><span>Адрес:
+                </span><?php echo carbon_get_the_post_meta( 'contacts__working-address' ); ?></p>
             </div>
           </div>
           <div class="contacts__bottom">

@@ -8,10 +8,11 @@ get_header();
 
 <main class="main">
   <div class="container">
-    <ul class="reset-list breadcrumbs">
-      <li><a href="../index.html">Главная</a></li>
-      <li>Текущая страница</li>
-    </ul>
+    <?php
+    if ( function_exists('yoast_breadcrumb') ) {
+      yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+    }
+    ?>
   </div>
 
   <div class="container">

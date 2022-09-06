@@ -48,20 +48,21 @@
                 src="<?php echo bloginfo('template_url'); ?>../style/app/img/logo.png" class="image" width="95"
                 height="" alt="Логотип Минздрава НН"></a>
             <h2 class="header__title">
-              Государственное бюджетное учреждение здравоохранения Нижегородской области
-              <p class="header__text">Станция скорой медицинской помощи г. Нижнего новгорода</p>
+              <?php echo carbon_get_theme_option( 'header__title' ); ?>
+              <p class="header__text"><?php echo carbon_get_theme_option( 'header__text' ); ?></p>
             </h2>
           </div>
           <div class="header__addres">
             <p>Адрес:
-              <span>603105 г. Нижний Новгород, ул. Чачиной, 24</span>
+              <span><?php echo carbon_get_theme_option( 'header__addres' ); ?></span>
             </p>
             <p>
               Приемная:
-              <span><a class="header__addres-link" href="tel:+78314286374">+7 (831-42) 8-63-74</a></span>
+              <span><a class="header__addres-link"
+                  href="tel:<?php echo carbon_get_theme_option( 'header__phone-link' ); ?>"><?php echo carbon_get_theme_option( 'header__phone' ); ?></a></span>
             </p>
           </div>
-          <a href="#" class="header__social">VK</a>
+          <a href="<?php echo carbon_get_theme_option( 'header__social-link' ); ?>" class="header__social">VK</a>
         </div>
       </div>
     </header>
