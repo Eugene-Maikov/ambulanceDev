@@ -515,12 +515,15 @@ get_header();
             </div>
           </div>
           <div class="contacts__bottom">
-            <p class="contacts__bottom-item">Приемная: <a class="contacts__bottom-link" href="tel:+78314286374">8
-                (831) 428-63-74</a></p>
-            <p class="contacts__bottom-item">Факс: <a class="contacts__bottom-link" href="tel:+78314286374">8 (831)
-                428-63-74</a></p>
+            <p class="contacts__bottom-item">Приемная: <a class="contacts__bottom-link"
+                href="tel:<?php echo carbon_get_theme_option( 'header__phone-link' ); ?>"><?php echo carbon_get_theme_option( 'header__phone' ); ?></a>
+            </p>
+            <p class="contacts__bottom-item">Факс: <a class="contacts__bottom-link"
+                href="tel:<?php echo carbon_get_theme_option( 'header__phone-link' ); ?>"><?php echo carbon_get_theme_option( 'header__phone' ); ?></a>
+            </p>
             <p class="contacts__bottom-item">Почта: <a class="contacts__bottom-link"
-                href="mailto:email@yandex.ru">email@yandex.ru</a></p>
+                href="mailto:<?php echo carbon_get_the_post_meta( 'contacts__email' ); ?>"><?php echo carbon_get_the_post_meta( 'contacts__email' ); ?></a>
+            </p>
           </div>
         </div>
       </div>

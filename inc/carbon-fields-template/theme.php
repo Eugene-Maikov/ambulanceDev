@@ -30,12 +30,16 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 		
 	))
 	->add_tab( 'Контакты', array(
-		Field::make('text', 'contacts__title', 'Название организации')->set_width(33),
-		Field::make('text', 'contacts__working', 'Режим работы')->set_width(33),
-		Field::make('text', 'contacts__working-address', 'Адрес')->set_width(33),
+		Field::make('text', 'contacts__title', 'Название организации')->set_width(25),
+		Field::make('text', 'contacts__working', 'Режим работы')->set_width(25),
+		Field::make('text', 'contacts__working-address', 'Адрес')->set_width(25),
+		Field::make('text', 'contacts__email', 'Почта')->set_width(25),
 		Field::make('textarea', 'contacts__map', 'Карта главного офиса')->help_text('Скрипт карты'),
-		Field::make( 'complex', 'contacts__bottom', 'Дополнительные контакты' )
-    ->add_fields( array(
-        Field::make( 'text', 'contacts__bottom-item', 'Доп контакт'),
-		)),
+		Field::make( 'complex', 'logos' )
+		))
+		->add_tab( 'Логотипы сотрудничества', array(
+			Field::make( 'complex', 'logos', 'Логотип')
+			->add_fields( array(
+					Field::make( 'image', 'cooperation__logo', 'Логотип' )
+			))
 	));
