@@ -8,56 +8,36 @@
  */
 
 ?>
+<div class="container">
+  <div class="wrapper">
+    <article id="post-<?php the_ID(); ?>" class="news section-offset">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+      <header>
+        <h2 class="title-regular"><?php
+					if ( is_singular() ) :
+						the_title( '<h1 class="title-regular">', '</h1>' );
+					else :
+						the_title( '<h2 class="title-regular"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					endif;
+						?>
+        </h2>
+      </header>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				ambulance_posted_on();
-				ambulance_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+      <main class="main">
+        <div class="news__inner">
+          <div class="news__left">
+            <p class="news__text"><?php the_content();?></p>
+          </div>
+          <div class="news__right">
+            <div class="news__img"><?php ambulance_post_thumbnail(); ?></div>
+          </div>
+        </div>
 
-	<?php ambulance_post_thumbnail(); ?>
+        </section>
+      </main>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ambulance' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ambulance' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+    </article><!-- #post-<?php the_ID(); ?> -->
 
-	<footer class="entry-footer">
-		<?php ambulance_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+    <?php get_sidebar(); ?>
+  </div>

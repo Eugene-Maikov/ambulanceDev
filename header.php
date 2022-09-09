@@ -77,59 +77,7 @@
             'menu_class'      => 'list-reset nav__list',
             ] );
           ?>
-          <!-- <ul class="list-reset nav__list">
-            <li class="nav__item"><a href="http://ambulance/" class="nav__link">Главная</a></li>
-            <li class="nav__item"><a href="http://ambulance/personnel/" class="nav__link dopmenu">Сотрудники</a>
-              <ul class="nav__sublist list-reset">
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-              </ul>
-            </li>
-            <li class="nav__item"><a href="page-item.html" class="nav__link dopmenu">Информация</a>
-              <ul class="nav__sublist list-reset">
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-              </ul>
-            </li>
-            <li class="nav__item"><a href="feedback.html" class="nav__link dopmenu">Обратная связь</a>
-              <ul class="nav__sublist list-reset">
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-              </ul>
-            </li>
 
-            <li class="nav__item"><a href="#" class="nav__link dopmenu">Элемент</a>
-              <ul class="nav__sublist list-reset">
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-              </ul>
-            </li>
-            <li class="nav__item"><a href="#" class="nav__link dopmenu">Элемент</a>
-              <ul class="nav__sublist list-reset">
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-                <li class="nav__subitem"><a class="nav__sublink" href="">Элемент</a></li>
-              </ul>
-            </li>
-
-          </ul> -->
           <div class="nav__buttons">
             <button class="btn-reset burger burger__site-map" aria-label="Открыть карту сайта" aria-expanded="false"
               data-graph-path="site-map" data-burger>

@@ -1,16 +1,12 @@
 <?php
 /**
- * Custom template tags for this theme
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
+* Пользовательские теги шаблона для этой темы
+* В конце концов, некоторые функции здесь могут быть заменены основными функциями.
  * @package ambulance
  */
 
 if ( ! function_exists( 'ambulance_posted_on' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time.
-	 */
+	// Отпечатает HTML с метал-информацией для текущего пост-даты/времени.
 	function ambulance_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -38,7 +34,7 @@ endif;
 
 if ( ! function_exists( 'ambulance_posted_by' ) ) :
 	/**
-	 * Prints HTML with meta information for the current author.
+* Отпечатает HTML с метал -информацией для текущего автора.
 	 */
 	function ambulance_posted_by() {
 		$byline = sprintf(
@@ -54,19 +50,19 @@ endif;
 
 if ( ! function_exists( 'ambulance_entry_footer' ) ) :
 	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
+	* Отпечатает HTML с метал -информацией для категорий, тегов и комментариев.
 	 */
 	function ambulance_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
+// / * Переводчики: используется между элементами списка, есть место после запятой */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'ambulance' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ambulance' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-			/* translators: used between list items, there is a space after the comma */
+// / * Переводчики: используется между элементами списка, есть место после запятой */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ambulance' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
@@ -114,10 +110,10 @@ endif;
 
 if ( ! function_exists( 'ambulance_post_thumbnail' ) ) :
 	/**
-	 * Displays an optional post thumbnail.
+	* Отображает дополнительную миниатюру пост.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
+	* Завершает миниатюру пост в якорный элемент на представлениях индекса или Div
+	* Элемент, когда на отдельных просмотрах.
 	 */
 	function ambulance_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
@@ -127,14 +123,14 @@ if ( ! function_exists( 'ambulance_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+<div class="post-thumbnail">
+  <?php the_post_thumbnail(); ?>
+</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
+<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+  <?php
 					the_post_thumbnail(
 						'post-thumbnail',
 						array(
@@ -146,9 +142,9 @@ if ( ! function_exists( 'ambulance_post_thumbnail' ) ) :
 						)
 					);
 				?>
-			</a>
+</a>
 
-			<?php
+<?php
 		endif; // End is_singular().
 	}
 endif;

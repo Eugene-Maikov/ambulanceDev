@@ -35,11 +35,19 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 		Field::make('text', 'contacts__working-address', 'Адрес')->set_width(25),
 		Field::make('text', 'contacts__email', 'Почта')->set_width(25),
 		Field::make('textarea', 'contacts__map', 'Карта главного офиса')->help_text('Скрипт карты'),
-		Field::make( 'complex', 'logos' )
-		))
-		->add_tab( 'Логотипы сотрудничества', array(
-			Field::make( 'complex', 'logos', 'Логотип')
-			->add_fields( array(
-					Field::make( 'image', 'cooperation__logo', 'Логотип' )
-			))
+		// Field::make( 'complex', 'logos' )
+		// ))
+		// ->add_tab( 'Логотипы сотрудничества', array(
+		// 	Field::make( 'complex', 'logos', 'Логотип')
+		// 	->add_fields( array(
+		// 			Field::make( 'image', 'cooperation__logo', 'Логотип' )
+		// 	))
 	));
+	
+	// Container::make('post_meta', 'Новость')
+	// ->show_on_post_type('post')
+	// ->add_fields( array(
+  //       Field::make('text', 'new__title', 'Заголовок'),
+  //       Field::make('rich_text', 'new__text', 'Текст новости')->set_rows(8)->help_text('Краткая информация об организации'),
+  //       Field::make('image', 'new__image', 'Картинка'),
+  //   ));
