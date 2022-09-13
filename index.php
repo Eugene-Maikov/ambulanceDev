@@ -1,11 +1,11 @@
 <?php
 /**
- * The main template file
+* Файл основного шаблона
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+* Это самый общий файл шаблона в теме WordPress
+* и один из двух необходимых файлов для темы (другой - style.css).
+* Он используется для отображения страницы, когда ничего более конкретного соответствует запросу.
+* Например, он собирает домашнюю страницу, когда не существует файла home.php.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,43 +13,5 @@
  */
 
 get_header();
-?>
 
-<main id="primary" class="site-main">
-
-  <?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-  <header>
-    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-  </header>
-  <?php
-			endif;
-
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				* Включите специфичный для типа шаблон для контента.
-				* Если вы хотите переопределить это в детскую тему, то включите файл
-				* называется контент -___. PHP (где ___-имя типа сообщения), и это будет использоваться вместо этого.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-</main><!-- #main -->
-
-<?php
 get_footer();

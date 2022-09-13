@@ -30,7 +30,6 @@ get_header();
         <a href="#" class="banner__item">
           <p>БАННЕР</p>
         </a>
-
       </div>
     </div>
   </section>
@@ -175,6 +174,8 @@ get_header();
 
   </section>
 
+  <?php $substations = carbon_get_the_post_meta('substations');
+  if ( ! empty( $substations ) ): ?>
   <section class="substations section-offset">
     <div class="container">
       <h2 class="title title--light">Подстанции</h2>
@@ -184,186 +185,23 @@ get_header();
         <div class="swiper substations__slider">
           <!-- Слайды -->
           <div class="swiper-wrapper substations__slider-wpapper">
+
+          <?php foreach ( $substations as $item ): ?>
+
             <div class="swiper-slide substations__slider-slick">
               <div class="substations__item">
                 <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
+                  <img loading="lazy" src="<?php echo $item['substations__image']; ?>"
                     class="image" alt="Фото подстанции">
                 </picture>
                 <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
+                  <a href="<?php echo $item['substations__link'] ?>" class="substations__title"><?php echo $item['substations__title'] ?></a>
+                  <p class="substations__text"><?php echo $item['substations__text'] ?></p>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide substations__slider-slick">
-              <div class="substations__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.avif"
-                    type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.webp"
-                    type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/substation.jpg"
-                    class="image" alt="Фото подстанции">
-                </picture>
-                <div class="substations__content">
-                  <a href="#" class="substations__title">Подстанция №</a>
-                  <p class="substations__text">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Numquam, adipisci
-                    asperiores! Tempora nam facere quis deleniti distinctio
-                    necessitatibus iusto cumque nisi molestiae
-                    ut repudiandae asperiores optio.</p>
-                </div>
-              </div>
-            </div>
+          <?php endforeach; ?>
+            
           </div><!-- /.Слайды -->
         </div><!-- /.Главный контейнер слайдера -->
         <div class="substations__btn-prev"></div>
@@ -374,20 +212,22 @@ get_header();
       </div>
     </div>
   </section>
+  <?php endif; ?>
 
+  
+  <?php $usefulLinks = carbon_get_the_post_meta('useful_links');
+   if ( ! empty( $usefulLinks ) ): ?>
   <section class="useful section-offset">
     <div class="container-fluid">
       <h2 class="title">Полезное</h2>
       <div class="useful__inner">
-        <a class="useful__link" href="#">ПАМЯТКА ОКАЗАНИЯ СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ НАСЕЛЕНИЮ</a>
-        <a class="useful__link" href="#">КАК ВЫЗВАТЬ СКОРУЮ ПОМОЩЬ С МОБИЛЬНОГО</a>
-        <a class="useful__link" href="#">ВИДЕОМАТЕРИАЛЫ</a>
-        <a class="useful__link" href="#">СТАНДАРТЫ ОКАЗАНИЯ СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ</a>
-        <a class="useful__link" href="#">ПАМЯТКА ОКАЗАНИЯ СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ НАСЕЛЕНИЮ</a>
+        <?php foreach ( $usefulLinks as $item ): ?>
+        <a class="useful__link" href="<?php echo $item['useful_links_link'] ?>"><?php echo $item['useful_links_title'] ?></a>
+        <?php endforeach; ?>
       </div>
-
     </div>
   </section>
+  <?php endif; ?>
 
   <div class="logos section-offset">
     <div class="container-min">
@@ -395,105 +235,31 @@ get_header();
       <div class="logos__container">
         <!-- Главный контейнер слайдера -->
         <div class="swiper logos__slider">
+          <?php $gallery__logos = carbon_get_the_post_meta( 'gallery__logos' ); 
+           foreach($gallery__logos as $gallery_logos_id) : 
+            $img_src = wp_get_attachment_image_url( $gallery_logos_id, 'full' ); ?>
+
           <!-- Слайды -->
           <div class="swiper-wrapper logos__slider-wpapper">
             <div class="swiper-slide logos__slider-slick">
               <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide logos__slider-slick">
-              <div class="logos__item">
-                <picture>
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.avif" type="image/avif">
-                  <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.webp" type="image/webp">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/logos.png"
-                    class="image" width="200" alt="Сотрудничество">
-                </picture>
+                <img src="<?php echo $img_src; ?>" class="image" width="200" alt="Сотрудничество">
               </div>
             </div>
           </div><!-- /.Слайды -->
+
+          <?php endforeach; ?>
+
         </div><!-- /.Главный контейнер слайдера -->
         <div class="logos__btn-prev"></div>
         <div class="logos__btn-next"></div>
       </div><!-- /.Доп. контейнер -->
     </div>
   </div>
+
+
+
+
 
   <section class="contacts section-offset">
     <div class="container">
