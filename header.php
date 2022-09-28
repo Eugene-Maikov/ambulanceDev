@@ -27,7 +27,7 @@
   <link rel="preload" href="<?php echo bloginfo('template_url'); ?>style/app/fonts/MontserratBold.woff2" as="font"
     type="font/woff2" crossorigin>
 
-
+  <script src='https://pos.gosuslugi.ru/bin/script.min.js'></script>
   <?php wp_head(); ?>
 </head>
 
@@ -105,7 +105,14 @@
           <li class="navMobile__item"><a href="#" class="navMobile__link">Элемент меню</a></li>
         </ul>
       </div>
-      <button class="btn-reset navMobile__close" aria-label="Закрыть модальное окно"></button>
+      <!-- <button class="btn-reset navMobile__close" aria-label="Закрыть модальное окно"></button> -->
+      <div class="btn-reset navMobile__close cl-btn-2">
+          <div>
+              <div class="leftright"></div>
+              <div class="rightleft"></div>
+              <span class="close-btn">закрыть</span>
+          </div>
+      </div>
     </div>
     <div class="graph-modal">
       <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="site-map">

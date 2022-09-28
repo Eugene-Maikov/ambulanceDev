@@ -17,20 +17,36 @@ get_header();
   <section class="banner">
     <div class="container">
       <h2 class="visually-hidden">Баннеры</h2>
-      <div class="banner__list">
-        <a href="#" class="banner__item">
-          <p>БАННЕР</p>
-        </a>
-        <a href="#" class="banner__item">
-          <p>БАННЕР</p>
-        </a>
-        <a href="#" class="banner__item">
-          <p>БАННЕР</p>
-        </a>
-        <a href="#" class="banner__item">
-          <p>БАННЕР</p>
-        </a>
-      </div>
+      <div id='js-show-iframe-wrapper'>
+        <div class='pos-banner-fluid bf-12'>
+          <div class='bf-12__decor'>
+            <div class='bf-12__logo-wrap'>
+              <img
+                class='bf-12__logo'
+                src='https://pos.gosuslugi.ru/bin/banner-fluid/gosuslugi-logo-blue.svg'
+                alt='Госуслуги'
+              />
+              <div class='bf-12__slogan'>Решаем вместе</div >
+            </div >
+          </div >
+          <div class='bf-12__content'>
+            <div class='bf-12__text'>
+              Недовольны работой больницы?
+            </div >
+
+            <div class='bf-12__bottom-wrap'>
+              <div class='bf-12__btn-wrap'>
+                <!-- pos-banner-btn_2 не удалять; другие классы не добавлять -->
+                <button
+                  class='pos-banner-btn_2'
+                  type='button'
+                >Написать о проблеме
+                </button >
+              </div >
+            </div>
+          </div >
+        </div >
+      </div >                 
     </div>
   </section>
 
@@ -39,9 +55,9 @@ get_header();
       <div class="message__inner">
         <div class="message__img">
           <picture>
-            <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/message.avif" type="image/avif">
-            <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/message.webp" type="image/webp">
-            <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/message1.png" class="image"
+            <source srcset="<?php echo bloginfo('template_url'); ?>/style/app/img/message.avif" type="image/avif">
+            <source srcset="<?php echo bloginfo('template_url'); ?>/style/app/img/message.webp" type="image/webp">
+            <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>/style/app/img/message1.png" class="image"
               width="160" height="160" alt="Обращение граждан">
           </picture>
         </div>
@@ -67,112 +83,77 @@ get_header();
     </div><!-- /. container -->
   </section>
 
-  <section class="news section-offset">
+<?php 
+  $section_news =  carbon_get_the_post_meta( 'section_news' );
+  $section_news_ids = wp_list_pluck($section_news, 'id');
+  
+  // запрос
+  $section_news_query_args = [
+    'post_type' => 'new', 
+    'post__in' => $section_news_ids, 
+  ];
+  $section_news_query = new WP_Query( $section_news_query_args );
+?>
+
+<?php if ( $section_news_query->have_posts() ) : ?>
+
+<section class="news section-offset">
     <div class="container">
       <h2 class="title">Новости</h2>
       <div class="news__inner">
-        <div class="news__item">
-          <div class="news__left">
-            <h3 class="news__title">Очень длинный заголовок новостей станции скорой помощи</h3>
-            <p class="news__text">
-              Lorem ipsum dolor sit amsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobet consectetur adipisicing elit.
-              Cumque quasi ut nobis enim earum corrupti doloribus
-              recusandae vero cu corporis omnis.
-            </p>
-            <a class="news__readmore" href="#">читать дальше ≫</a>
-          </div>
-          <div class="news__right">
-            <p class="news__date">Опубликовано: 12.08.2022</p>
-            <div class="news__img">
-              <picture>
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.avif" type="image/avif">
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.webp" type="image/webp">
-                <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/new.jpg" class="image"
-                  width="191" height="258" alt="Картинка новости">
-              </picture>
-            </div>
-          </div>
-        </div>
-        <div class="news__item">
-          <div class="news__left">
-            <h3 class="news__title">Очень длинный заголовок новостей станции скорой помощи</h3>
-            <p class="news__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobis enim earum corrupti doloribus
-              recusandae vero cu corporis omsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobnis.
-            </p>
-            <a class="news__readmore" href="#">читать дальше ≫</a>
-          </div>
-          <div class="news__right">
-            <p class="news__date">Опубликовано: 12.08.2022</p>
-            <div class="news__img">
-              <picture>
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.avif" type="image/avif">
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.webp" type="image/webp">
-                <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/new.jpg" class="image"
-                  width="191" height="258" alt="Картинка новости">
-              </picture>
-            </div>
-          </div>
-        </div>
-        <div class="news__item">
-          <div class="news__left">
-            <h3 class="news__title">Очень длинный заголовок новостей станции скорой помощи</h3>
-            <p class="news__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobis enim earum corrupti doloribus
-              recusandae vero cu corporis omnis.nim earum corrupti doloribus
-              recusandae vero cu corporis omnis.nim earum corrupti doloribus
-              recusandae vero cu corporis omnis.
-            </p>
-            <a class="news__readmore" href="#">читать дальше ≫</a>
-          </div>
-          <div class="news__right">
-            <p class="news__date">Опубликовано: 12.08.2022</p>
-            <div class="news__img">
-              <picture>
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.avif" type="image/avif">
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.webp" type="image/webp">
-                <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/new.jpg" class="image"
-                  width="191" height="258" alt="Картинка новости">
-              </picture>
-            </div>
-          </div>
-        </div>
-        <div class="news__item">
-          <div class="news__left">
-            <h3 class="news__title">Очень длинный заголовок новостей станции скорой помощи</h3>
-            <p class="news__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cumque quasi ut nobis enim earum corrupti doloribus
-              recusandae vero cu corporis omnis.
-            </p>
-            <a class="news__readmore" href="#">читать дальше ≫</a>
-          </div>
-          <div class="news__right">
-            <p class="news__date">Опубликовано: 12.08.2022</p>
-            <div class="news__img">
-              <picture>
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.avif" type="image/avif">
-                <source srcset="<?php echo bloginfo('template_url'); ?>../style/app/img/new.webp" type="image/webp">
-                <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/new.jpg" class="image"
-                  width="191" height="258" alt="Картинка новости">
-              </picture>
-            </div>
-          </div>
-        </div>
 
-      </div>
+	<?php while ( $section_news_query->have_posts() ) : $section_news_query->the_post(); ?>
+		    <?php echo get_template_part('new-content'); ?>
+	<?php endwhile; ?>
+
+	<?php wp_reset_postdata(); ?>
+
+    </div>
       <div class="news__btn-box">
         <button class="btn-reset btn news__btn" data-graph-path="">Все новости</button>
       </div>
     </div>
-
   </section>
+  <?php endif; ?>
+
+
+  <section class="news section-offset">
+  <div class="container">
+    <h2 class="title">Новости</h2>
+    <div class="news__inner news__inner-archive">
+      <div class="news__item">
+        <div class="news__left news__left-archive">
+          <h3 class="news__title news__title-archive">Очень длинный заголовок новостей станции скорой помощи</h3>
+          <p class="news__text news__text-archive">
+            Lorem ipsum dolor sit amsum dolor sit amet consectetur adipisicing elit.
+            Cumque quasi ut nobet consectetur adipisicing elit.
+            Cumque quasi ut nobis enim earum corrupti doloribus
+            recusandae vero cu corporis omnis.
+          </p>
+          <p class="news__date news__date-archive">Опубликовано: 12.08.2022</p>
+        </div>
+        <div class="news__right news__right-archive">
+          <div class="news__img-archive">
+            <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>../style/app/img/new.jpg" class="image" width="100%" alt="Картинка новости">
+          </div>
+        </div>
+      </div>
+      
+      
+      
+
+    </div>
+    <div class="news__btn-box">
+      <button class="btn-reset btn news__btn" data-graph-path="">Все новости</button>
+    </div>
+  </div>
+
+</section>
+
+
+  
+        
+      
 
   <?php $substations = carbon_get_the_post_meta('substations');
   if ( ! empty( $substations ) ): ?>
@@ -208,7 +189,7 @@ get_header();
         <div class="substations__btn-next"></div>
       </div><!-- /.Доп. контейнер -->
       <div class="news__btn-box">
-        <!-- <button class="btn-reset btn substations__btn">Все подстанции</button> -->
+        <button class="btn-reset btn substations__btn">Все подстанции</button>
       </div>
     </div>
   </section>

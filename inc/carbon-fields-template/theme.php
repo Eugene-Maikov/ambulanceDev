@@ -54,5 +54,16 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 		Field::make('textarea', 'contacts__map', 'Карта главного офиса')->help_text('Скрипт карты'),
 		
 		Field::make( 'media_gallery', 'gallery__logos', 'Галерея логотипов'),
+	))
+	->add_tab( 'Новости', array(
+		Field::make('text', 'news__title', 'Заголовок')->set_width(25),
+		Field::make( 'association', 'section_news', 'Новости' )
+    ->set_types([
+			[
+				'type' => 'post',
+				'post_type' => 'news',
+			]
+		])
+
 	));
 		

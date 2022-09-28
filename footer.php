@@ -17,7 +17,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+ <script>Widget("https://pos.gosuslugi.ru/form", 247036)</script>
 </body>
 
 </html>

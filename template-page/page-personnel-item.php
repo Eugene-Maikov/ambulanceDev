@@ -17,7 +17,7 @@ get_header();
 
   <div class="container">
     <div class="personnel section-offset">
-      <div class="title">Персонал</div>
+      <div class="title">Подстанции</div>
 
 
       <ul class="list-reset personnel__list list">
